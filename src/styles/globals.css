@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  main {
+    @apply bg-[url('/web-bg.svg')] inset-0 bg-cover bg-no-repeat bg-center absolute top-0 left-0
+  }
+}
+
+@layer components {
+  .hover-animation {
+    @apply inline-block relative;
+  }
+
+  .hover-animation::after {
+    @apply absolute w-full h-[3px] -bottom-1 left-0 bg-primary-border origin-bottom-right transition transform duration-500 ease-out;
+    content: "";
+    transform: scaleX(0);
+  }
+
+  .hover-animation:hover::after {
+    @apply origin-bottom-left;
+    transform: scaleX(1);
+  }
+}

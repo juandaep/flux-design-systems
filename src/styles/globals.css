@@ -14,7 +14,7 @@
   }
 
   .hover-animation::after {
-    @apply absolute w-full h-[3px] -bottom-1 left-0 bg-primary-border origin-bottom-right transition transform duration-500 ease-out;
+    @apply absolute w-full h-[3px] -bottom-1 left-0 origin-bottom-right bg-primary-border transition transform duration-500 ease-out;
     content: "";
     transform: scaleX(0);
   }

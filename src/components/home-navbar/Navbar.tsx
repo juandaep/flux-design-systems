@@ -8,7 +8,7 @@ import { homeNavLinks } from './navLinks'
 export const HomeNavbar = () => {
   return (
     <nav
-    className={classNames('flex p-4 justify-between items-center', 'md:px-12 md:py-6')}>
+    className={classNames('flex w-full p-4 justify-between items-center', 'md:px-12 md:py-6')}>
         <div className={classNames('relative w-[60px] h-[18px]', 'md:w-[96px] md:h-[32px]')}>
         <Image
         src='/logo.svg'

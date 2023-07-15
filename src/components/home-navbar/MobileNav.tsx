@@ -67,7 +67,7 @@ export const HomeMobileNav = () => {
                     <div className="flex flex-col justify-center gap-3 self-stretch font-medium text-lg text-base-700">
                       {homeNavLinks.map((link) => (
                         <Link
-                          title={link.title}
+                          key={link.title}
                           href={link.href}
                           className={classNames(
                             "flex px-2 py-3 items-center gap-2 self-stretch",

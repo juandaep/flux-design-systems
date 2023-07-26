@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  /* bg-[url('/web-bg.svg')]  */
   main {
-    @apply bg-[url('/web-bg.svg')] inset-0 bg-cover bg-no-repeat bg-center absolute top-0 left-0
+    @apply inset-0 bg-cover bg-no-repeat bg-center absolute top-0 left-0
+  }
+  body {
+    @apply bg-white dark:bg-base-900
   }
 }
 

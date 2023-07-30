@@ -2,7 +2,7 @@ import { HomeNavbar } from "@/components/home-navbar/Navbar";
 import { classNames } from "@/utils/classNames";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { ThemeSelect } from "./ui/ThemeSelect";
+import { ThemeSelect } from "../components/ThemeSelect";
 
 export default function Home() {
 

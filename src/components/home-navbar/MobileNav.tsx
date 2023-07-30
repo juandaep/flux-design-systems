@@ -7,7 +7,6 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Fragment, useState } from "react";
-import { ThemeToggle } from "../ThemeToggle";
 import { homeNavLinks } from "./navLinks";
 
 export const HomeMobileNav = () => {
@@ -91,7 +90,6 @@ export const HomeMobileNav = () => {
                         </span>
                       </Link>
                     </div>
-                    <ThemeToggle />
                   </div>
                   <button
                     type="button"

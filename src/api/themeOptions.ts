@@ -1,7 +1,5 @@
-import { Option } from "@/components/select/interfaces";
-
-export const themeOptions: Option[] = [
-    { label: "Light", value: "light" },
-    { label: "Dark", value: "dark" },
-    { label: "System", value: "system" },
-];
+export const themeOptions = [
+    { name: 'Light', value: 'light' },
+    { name: 'Dark', value: 'dark' },
+    { name: 'System', value: 'system' },
+  ]

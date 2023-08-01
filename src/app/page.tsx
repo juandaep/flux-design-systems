@@ -62,7 +62,6 @@ export default function Home() {
             <ArrowLongRightIcon />
           </span>
         </Link>
-        <ThemeSelect />
       </div>
     </main>
   );

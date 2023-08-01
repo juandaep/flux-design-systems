@@ -7,6 +7,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Fragment, useState } from "react";
+import { ThemeSelect } from "../ThemeSelect";
 import { homeNavLinks } from "./navLinks";
 
 export const HomeMobileNav = () => {
@@ -27,8 +28,8 @@ export const HomeMobileNav = () => {
       <button
         type="button"
         className={classNames(
-          "p-1",
-          "focus:ring-4 focus:ring-primary-focused focus:rounded-lg"
+          "p-1 text-base-600 transition-all",
+          "focus:ring-4 focus:ring-primary-focused focus:rounded-lg", "dark:text-base-200 dark:ring-base-800"
         )}
         aria-label="Nav Menu"
         onClick={openModal}
@@ -59,9 +60,9 @@ export const HomeMobileNav = () => {
                 enterTo="opacity-100 scale-100"
                 leave="ease-in duration-200"
                 leaveFrom="opacity-100 scale-100"
-                leaveTo="opacitu-0 scale-95"
+                leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="flex flex-col justify-center w-full max-w-md p-3 gap-6 rounded-lg bg-white text-left align-middle shadow-xl transition-all transform overflow-hidden">
+                <Dialog.Panel className={classNames('flex flex-col justify-center items-start gap-6 w-full max-w-md transform rounded-lg bg-white p-3 text-left align-middle shadow-xl transition-all')}>
                   <div className="flex flex-col justify-center gap-2 self-stretch divide-y divide divide-base-300">
                     <div className="flex flex-col justify-center gap-3 self-stretch font-medium text-lg text-base-700">
                       {homeNavLinks.map((link) => (
@@ -90,6 +91,7 @@ export const HomeMobileNav = () => {
                         </span>
                       </Link>
                     </div>
+                      <ThemeSelect />
                   </div>
                   <button
                     type="button"

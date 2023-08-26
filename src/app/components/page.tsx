@@ -1,19 +1,9 @@
-"use client"
-import SideMenu from '@/components/SideMenu';
-import React, { useState } from 'react';
+import React from 'react'
 
-const components: React.FC = () => {
-  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-
+const page = () => {
   return (
-    <div className="flex">
-      <SideMenu isOpen={isSideMenuOpen} />
-      <div className="flex-1 h-screen bg-fixed bg-cover bg-center" style={{ backgroundImage: 'url("/your-background-image.jpg")' }}>
-        <button onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}>Toggle Menu</button>
-        {/* Content */}
-      </div>
-    </div>
+    <div>page</div>
   )
 }
 
-export default components
+export default page

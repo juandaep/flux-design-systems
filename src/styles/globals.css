@@ -5,7 +5,7 @@
 @layer base {
   /* bg-[url('/web-bg.svg')]  */
   main {
-    @apply bg-[url('/web-bg-light.svg')] dark:bg-[url('/web-bg-dark.svg')] inset-0 bg-cover bg-no-repeat bg-center absolute bg-fixed min-h-screen overflow-y-scroll  top-0 left-0
+    @apply bg-[url('/web-bg-light.png')] dark:bg-[url('/web-bg-dark.png')] inset-0 bg-cover bg-no-repeat bg-center absolute bg-fixed min-h-screen overflow-y-scroll  top-0 left-0
   }
   body {
     @apply bg-white dark:bg-[#05070A]

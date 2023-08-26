@@ -3,7 +3,7 @@ import React from "react";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
-const ToggleSwitch: React.FC = () => {
+const ToggleSwitch = () => {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {

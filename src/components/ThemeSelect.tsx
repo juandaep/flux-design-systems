@@ -1,7 +1,7 @@
 "use client";
 import { themeOptions } from "@/api/themeOptions";
 import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "next-themes";
 import { Fragment, useEffect, useState } from "react";
 
@@ -17,15 +17,15 @@ export const ThemeSelect = () => {
   }
 
   return (
-    <div className="fixed top-16 w-72">
+    <div className="flex items-center px-3 py-2 self-stretch">
       <Listbox value={theme} onChange={setTheme}>
-        <div className="relative mt-1">
-          <Listbox.Button className="relative w-full  cursor-default rounded-lg py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
-            <span className="block truncate">{theme}</span>
+        <Listbox.Label className="w-full text-base-700 text-base">Switch Theme</Listbox.Label>
+        <div className="relative w-full">
+        <Listbox.Button className="relative w-full cursor-default py-2.5 px-3 text-left capitalize rounded-lg border border-base-300 bg-white shadow-inner focus:outline-none">
+            <span className="block truncate font-medium text-base text-base-800">{theme}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronDownIcon
-                className="h-5 w-5 text-gray-400"
-                aria-hidden="true"
+                className="h-5 w-5 text-base-500"
               />
             </span>
           </Listbox.Button>
@@ -35,39 +35,41 @@ export const ThemeSelect = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="mt-1 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {themeOptions.map((themes, themeIDX) => (
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base border border-base-100 shadow-lg focus:outline-none">
+              {themeOptions.map(themeItems => {
+                const {name, value, Icon} = themeItems
+                return(
+                  <Listbox.Option
+                  key={name}
+                  value={value}
+                  className={({ active }) =>
+                    `flex cursor-default select-none py-1 px-2 gap-2 truncate font-medium items-center ${
+                      active ? "bg-base-100 text-primary-main" : "text-gray-600"
+                    }`
+                  }
+                >
+                  <Icon className="h-5 w-5"/>
+                  {name}
+                </Listbox.Option>
+                )
+              })}
+              {/* {themeOptions.map((themes, themeIDX) => (
                 <Listbox.Option
                   key={themeIDX}
                   value={themes.value}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? "bg-amber-100 text-amber-900" : "text-gray-900"
+                    `flex cursor-default select-none py-1 px-2 gap-2 truncate font-medium items-center ${
+                      active ? "bg-base-100 text-primary-main" : "text-gray-600"
                     }`
                   }
                 >
-                  {({ selected }) => (
-                    <>
-                      <span
-                        className={`block truncate ${
-                          selected ? "font-medium" : "font-normal"
-                        }`}
-                      >
                         {themes.name}
-                      </span>
-                      {selected ? (
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
-                        </span>
-                      ) : null}
-                    </>
-                  )}
                 </Listbox.Option>
-              ))}
+              ))} */}
             </Listbox.Options>
           </Transition>
         </div>
       </Listbox>
-    </div>
+      </div>
   );
 };
